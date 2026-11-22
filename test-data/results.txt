@@ -1,0 +1,11 @@
+normal: university helpdesk => prompt generated
+normal: retail support => prompt generated
+normal: biology tutor => prompt generated
+normal: fictional marker: ORANGE => prompt generated
+normal: topic: astronomy only => prompt generated
+edge: x => prompt generated
+edge: हिंदी and English => prompt generated
+edge: rule rule rule rule rule rule  => prompt generated
+invalid: empty or whitespace => rejected
+invalid: empty or whitespace => rejected
+review: missing response rejected; populated response included

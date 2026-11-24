@@ -1,1 +1,87 @@
 :root{--ink:#172733;--muted:#536777;--line:#cfdbdc;--paper:#f4f7f4;--accent:#006b5d;--dark:#102c2b}*{box-sizing:border-box}body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--paper);color:var(--ink)}header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,24px)}.brand{display:flex;gap:10px;align-items:center;font-size:18px;letter-spacing:-.03em}.brand strong{color:var(--accent)}.mark{display:grid;place-items:center;background:var(--dark);color:#fff;border-radius:8px;width:34px;height:34px;font-weight:700}.tag,.step,.overline{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--accent)}.tag{color:var(--muted)}main{max-width:1280px;margin:auto;padding:0 30px}.intro{display:grid;grid-template-columns:1fr 330px;align-items:end;gap:48px;padding:52px 0 42px}.intro h1{font-size:clamp(36px,4.3vw,62px);line-height:1.04;letter-spacing:-.04em;margin:13px 0 18px;font-weight:650}.intro>div>p:last-child{color:var(--muted);max-width:640px;margin-bottom:0}.notice{background:#e1eeea;border-radius:12px;padding:19px 22px;font-size:14px}.notice p{margin:6px 0 0;color:#3b5c58}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:26px}.panel p{color:var(--muted);font-size:14px}.heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.heading h2{font-size:23px;line-height:1.2;letter-spacing:-.025em;margin:5px 0}.heading h3{margin:16px 0 8px}label{display:block;font-size:14px;font-weight:650;margin:23px 0 8px}textarea{display:block;width:100%;resize:vertical;border:1px solid #9fb2b1;border-radius:8px;padding:13px;font:inherit;font-size:14px;line-height:1.5;color:var(--ink);background:#fcfefd}textarea:focus,button:focus-visible,.result:focus{outline:3px solid #80c5b6;outline-offset:2px}.actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:14px}button{font:inherit;font-size:14px;font-weight:650;border:0;background:var(--accent);color:#fff;border-radius:7px;padding:11px 15px;cursor:pointer}button:hover{background:#005548}.secondary,.copy{background:#edf3f0;color:var(--dark)}.secondary:hover,.copy:hover{background:#d9e8e2}.copy{padding:7px 12px}.result{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f7f5;border:1px solid #e0e9e5;border-radius:8px;padding:15px;font:13px/1.55 ui-monospace,SFMono-Regular,monospace;max-height:330px;overflow:auto;color:#29413e}.reviewheading{border-top:1px solid var(--line);margin-top:27px;padding-top:24px}.error{color:#a23424!important;margin:8px 0 0;min-height:1em}footer{display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:12px;padding:35px 0}@media(max-width:800px){.intro,.workspace{grid-template-columns:1fr}.intro{gap:25px;padding:35px 0 25px}.tag{display:none}main{padding:0 18px}.panel{padding:20px}footer{display:block}footer span{display:block;margin-top:6px}}
+
+/* Classroom comparison uses the workbench's paper and teal palette. */
+:root {
+  --hero: #102f2c;
+  --hero-panel: #1a3c37;
+  --hero-line: #49665f;
+  --hero-copy: #c5ded4;
+  --mint: #b8eacc;
+  --pass: #e0f4e8;
+  --pass-ink: #185d3d;
+  --change: #faecd9;
+  --change-ink: #7e4815;
+  --white: #fff;
+  --editor: #fafcfb;
+  --display: Georgia, 'Times New Roman', serif;
+}
+.topbar { padding-inline: max(24px, calc((100% - 1220px) / 2)); gap: 20px; }
+.brand { white-space: nowrap; }
+.brand strong { margin-left: -6px; }
+nav { display: flex; gap: clamp(14px, 3vw, 32px); }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 650; }
+nav a:hover { color: var(--accent); text-decoration: underline; }
+a:focus-visible, summary:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 76px);
+  align-items: center;
+  margin: 26px 0 42px;
+  padding: clamp(26px, 5vw, 64px);
+  border-radius: 18px;
+  color: var(--white);
+  background: var(--hero);
+}
+.hero h1 { font: 400 clamp(36px, 6.3vw, 80px)/.99 var(--display); letter-spacing: -.04em; margin: 0; }
+.hero > div > p { color: var(--hero-copy); max-width: 49ch; margin: 20px 0 24px; }
+.primary { display: inline-block; padding: 12px 16px; border-radius: 7px; background: var(--mint); color: var(--hero); text-decoration: none; font-weight: 750; }
+.primary:hover { background: var(--white); }
+.hero .primary:focus-visible { outline-color: var(--mint); }
+.hero-example { min-width: 0; padding: 21px 24px; border: 1px solid var(--hero-line); border-radius: 14px; background: var(--hero-panel); }
+.hero-label { color: var(--hero-copy); font-size: 13px; margin: 0 0 10px; }
+.example-question { font-size: clamp(18px, 2vw, 25px); line-height: 1.2; font-weight: 700; margin: 0 0 18px; }
+.example-reply { display: grid; grid-template-columns: 66px 1fr; gap: 12px; border-top: 1px solid var(--hero-line); padding: 12px 0; font-size: 14px; }
+.example-reply span { color: var(--hero-copy); }
+.example-reply p { margin: 0; }
+.example-reply.revised p { color: var(--mint); }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.section-heading h2 { font: 400 clamp(30px, 4vw, 44px)/1.05 var(--display); letter-spacing: -.035em; margin: 0; }
+.section-heading h3 { font-size: 22px; margin: 0; }
+.section-heading p, .workbench > p { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; }
+.instruction-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.change-note { color: var(--pass-ink); background: var(--pass); border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+.change-note:empty { display: none; }
+.change-note mark { color: inherit; background: transparent; font-weight: 700; }
+.results-heading { margin: 28px 0 12px; }
+.results-heading .result-count { font-weight: 700; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.table-shell { border: 1px solid var(--line); border-radius: 12px; overflow: clip; background: var(--white); }
+.comparison-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.comparison-table th { background: var(--hero); color: var(--white); text-align: left; font-size: 14px; padding: 12px 16px; }
+.comparison-table td { vertical-align: top; border-top: 1px solid var(--line); padding: 14px 16px; }
+.comparison-table td + td { border-left: 1px solid var(--line); }
+.comparison-table td label { margin: 0 0 5px; font-size: 13px; color: var(--muted); }
+.comparison-table td textarea + label { margin-top: 9px; }
+.comparison-table textarea { background: var(--editor); padding: 8px 10px; }
+.provenance { display: inline-block; margin-top: 7px; font-size: 12px; color: var(--muted); }
+select { margin-top: 9px; padding: 6px 9px; font: inherit; font-size: 13px; font-weight: 650; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
+select[data-verdict="Pass"] { background: var(--pass); color: var(--pass-ink); }
+select[data-verdict="Needs change"] { background: var(--change); color: var(--change-ink); }
+.table-actions { display: flex; gap: 10px 15px; align-items: center; flex-wrap: wrap; margin: 12px 0 30px; }
+.table-actions p { margin: 0; color: var(--muted); font-size: 13px; }
+.workbench { border-top: 1px solid var(--line); padding-top: 16px; }
+.workbench summary { cursor: pointer; font-weight: 700; }
+.workbench .workspace { margin-top: 15px; }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: minmax(0, 1fr); margin: 18px 0 30px; }
+  .hero-example { padding: 15px; }
+  .instruction-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .comparison-table thead { position: absolute; width: 1px; height: 1px; overflow: clip; clip-path: inset(50%); }
+  .comparison-table td, .comparison-table tr { display: block; }
+  .comparison-table td + td { border-left: 0; border-top: none; }
+  .comparison-table td { padding: 12px; }
+  .comparison-table tr:nth-child(even) { background: var(--paper); }
+  .topbar { min-height: 66px; height: auto; flex-wrap: wrap; padding-block: 12px; gap: 8px 16px; }
+}

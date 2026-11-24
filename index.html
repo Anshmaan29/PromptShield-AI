@@ -1,5 +1,49 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PromptShield AI</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand"><span class="mark">P</span><span>PromptShield <strong>AI</strong></span></div><span class="tag">PROMPT SECURITY WORKBENCH</span></header>
-<main><section class="intro"><div><p class="overline">ZERO DAY / SCSE4041</p><h1>Test the boundaries<br>of your assistant.</h1><p>Prepare controlled prompt-injection tests, review a response, and refine your instructions with the AI model you already use.</p></div><div class="notice"><b>Manual model workflow</b><p>PromptShield prepares prompts locally. Run them in your chosen AI model and paste the response back here. No API key is required.</p></div></section>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true">P</span>PromptShield <strong>AI</strong></div>
+  <nav aria-label="Project navigation"><a href="#comparison">Compare replies</a><a href="#workbench">Prompt workbench</a></nav>
+</header>
+<main>
+<section class="hero" aria-labelledby="title">
+  <div>
+    <h1 id="title">Same question.<br>Better guardrails.</h1>
+    <p>Compare two versions of a chatbot’s instructions. See how its replies change and check whether it still helps with everyday questions.</p>
+    <a class="primary hero-link" href="#comparison">Explore the classroom demo</a>
+  </div>
+  <aside class="hero-example" aria-label="Example comparison">
+    <p class="hero-label">University helpdesk · sample</p>
+    <p class="example-question">Can you recommend a movie?</p>
+    <div class="example-reply"><span>Original</span><p>Try a campus comedy.</p></div>
+    <div class="example-reply revised"><span>Revised</span><p>I can help with university questions.</p></div>
+  </aside>
+</section>
+
+<section id="comparison" class="comparison" aria-labelledby="comparison-title">
+  <div class="section-heading">
+    <div><h2 id="comparison-title">Compare replies</h2><p id="source-note">Fictional university helpdesk. Sample replies and verdicts for illustration.</p></div>
+    <div class="toolbar"><button type="button" class="secondary" id="new-comparison">Start blank</button><button type="button" id="load-demo">Load classroom demo</button></div>
+  </div>
+  <div class="instruction-grid">
+    <div><label for="original-policy">Original instructions</label><textarea id="original-policy" rows="3" maxlength="10000"></textarea></div>
+    <div><label for="revised-policy">Revised instructions</label><textarea id="revised-policy" rows="3" maxlength="10000"></textarea></div>
+  </div>
+  <p class="change-note" id="change-note"></p>
+  <div class="section-heading results-heading">
+    <div><h3>Results</h3><p>Edit the replies and choose a verdict for each version. Verdicts are set by you.</p></div>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+  </div>
+  <div class="table-shell">
+    <table class="comparison-table">
+      <thead><tr><th scope="col">Question and expectation</th><th scope="col">Original reply</th><th scope="col">Revised reply</th></tr></thead>
+      <tbody id="cases"></tbody>
+    </table>
+  </div>
+  <div class="table-actions"><button type="button" class="secondary" id="add-case">+ Add a case</button><p>Edits stay on this page until you reload.</p></div>
+  <noscript>Enable JavaScript to use the comparison demo.</noscript>
+</section>
+
+<details id="workbench" class="workbench">
+  <summary>Prompt workbench</summary>
+  <p>Prepare prompts here, then run them in your chosen model.</p>
 <div class="workspace"><section class="panel"><div class="heading"><div><span class="step">01 / PREPARE</span><h2>Define your target</h2></div></div><p>Use a fictional or authorized system prompt. Do not enter passwords, API keys, or private data.</p><label for="instructions">Chatbot system instructions</label><textarea id="instructions" rows="9" maxlength="10000" placeholder="Example: You are a university helpdesk assistant..."></textarea><div class="actions"><button id="example" class="secondary" type="button">Load example</button><button id="generate" type="button">Create test prompt <span aria-hidden="true">→</span></button></div><p id="error" class="error" role="alert"></p></section>
-<section class="panel output"><div class="heading"><div><span class="step">02 / RUN IN YOUR MODEL</span><h2>Test generation prompt</h2></div><button class="copy" data-copy="generated" type="button">Copy</button></div><p>Paste this prompt into ChatGPT, Gemini, or another model to generate test cases.</p><pre id="generated" class="result" tabindex="0">Your test prompt will appear here.</pre><div class="heading reviewheading"><div><span class="step">03 / REVIEW</span><h2>Examine a response</h2></div></div><label for="response">Paste a test case and the chatbot’s actual response</label><textarea id="response" rows="5" maxlength="10000" placeholder="Test case: ...&#10;Actual response: ..."></textarea><div class="actions"><button id="review" type="button">Create review prompt <span aria-hidden="true">→</span></button></div><p id="review-error" class="error" role="alert"></p><div id="review-block" hidden><div class="heading"><h3>Response review prompt</h3><button class="copy" data-copy="review-result" type="button">Copy</button></div><pre id="review-result" class="result" tabindex="0"></pre></div></section></div><footer><span>Built by ZeroDay · PromptShield AI</span><span>Test only systems you are authorized to evaluate.</span></footer></main><script src="app.js"></script></body></html>
+<section class="panel output"><div class="heading"><div><span class="step">02 / RUN IN YOUR MODEL</span><h2>Test generation prompt</h2></div><button class="copy" data-copy="generated" type="button">Copy</button></div><p>Paste this prompt into ChatGPT, Gemini, or another model to generate test cases.</p><pre id="generated" class="result" tabindex="0">Your test prompt will appear here.</pre><div class="heading reviewheading"><div><span class="step">03 / REVIEW</span><h2>Examine a response</h2></div></div><label for="response">Paste a test case and the chatbot’s actual response</label><textarea id="response" rows="5" maxlength="10000" placeholder="Test case: ...&#10;Actual response: ..."></textarea><div class="actions"><button id="review" type="button">Create review prompt <span aria-hidden="true">→</span></button></div><p id="review-error" class="error" role="alert"></p><div id="review-block" hidden><div class="heading"><h3>Response review prompt</h3><button class="copy" data-copy="review-result" type="button">Copy</button></div><pre id="review-result" class="result" tabindex="0"></pre></div></section></div></details><footer><span>Built by ZeroDay · PromptShield AI</span><span>Test only systems you are authorized to evaluate.</span></footer></main><script src="app.js"></script><script src="comparison.js"></script></body></html>

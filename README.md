@@ -13,3 +13,9 @@ Anshmaan Singh (S24CSEU0637), Anjali Singh (S24CSEU0359), Krishnand Yadav (S24CS
 ## Verification
 
 Run `node test-data/test.js`. The tests exercise the prompt construction functions and input validation. They do not measure any model or target chatbot's security.
+
+## Classroom comparison
+
+The project opens with a fictional university helpdesk demo. Its replies and verdicts are illustrative. Compare the original and revised instructions and check the out-of-scope question alongside normal admissions and fee questions. Choose **Start blank** to enter your own instructions, questions, expected behavior, and recorded replies. Choose a verdict for each reply yourself. Edits stay on the current page until you reload.
+
+The published prototype is at https://anshmaan29.github.io/PromptShield-AI/.
